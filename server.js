@@ -3,6 +3,8 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
+require('dotenv').config()
+
 
 const PORT = process.env.PORT || 4000;
 const routes = require('./routes');
@@ -20,6 +22,7 @@ app.use(cors(corsOptions));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+// to print in the terminal message after all requests
 app.use((req, res, next) => {
   const url = req.url;
   const method = req.method;
