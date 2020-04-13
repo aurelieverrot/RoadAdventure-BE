@@ -11,7 +11,7 @@ const routes = require('./routes');
 const db = require('./models');
 
 const corsOptions = {
-  origin: ['http://localhost:4000'],
+  origin: ['http://localhost:3000'],
   methods: "GET,POST,PUT,DELETE",
   credentials: true, //allows session cookies to be sent back and forth
   optionsSuccessStatus: 200 //legacy browsers
@@ -36,7 +36,7 @@ app.use((req, res, next) => {
 // API Routes
 app.use("/api/v1", routes.api);
 app.use("/api/*", (req, res) => {
-  res.status(404).json({ status: 404, errot: 'Source not found'})
+  res.status(404).json({ status: 404, error: 'Source not found'})
 });
 
 // ---
