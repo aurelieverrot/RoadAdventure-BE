@@ -4,13 +4,28 @@ const db = require("./models");
 const trips = [
   {
     title: 'Trip 1',
-    
-    status: false
+    status: false,
+    shortText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
   },
   {
     title: 'Trip 2',
-    
-    status: true
+    status: true,
+    shortText: "magna aliqua. Sollicitudin tempor id eu nisl. Cras sed felis eget velit aliquet sagittis id. Et sollicitudin ac orci"
+  },
+  {
+    title: 'Trip 4',
+    status: false,
+    shortText: "phasellus. Ultrices neque ornare aenean euismod. Metus dictum at tempor commodo ullamcorper. Hendrerit dolor"
+  },
+  {
+    title: 'Trip 5',
+    status: true,
+    shortText: "magna eget est lorem. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Turpis"
+  },
+  {
+    title: 'Trip 6',
+    status: false,
+    shortText: "egestas integer eget aliquet nibh praesent tristique. Consequat semper viverra nam libero justo laoreet sit"
   }
 ]
 

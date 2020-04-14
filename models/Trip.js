@@ -12,6 +12,11 @@ const TripSchema = new mongoose.Schema({
   },
   status: {
     type: Boolean,
+  },
+  shortText: {
+    type: String,
+    required: true,
+    maxLength: 150,
   }
 }, {timestamps: true});
 
