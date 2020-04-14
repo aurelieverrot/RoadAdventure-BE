@@ -5,15 +5,15 @@ const ctrl = require("../controllers");
 
 // on api/v1/...
 
-// USER routes
-router.get("/users", verifyToken, ctrl.users.index);
-router.get("/users/:id", verifyToken, ctrl.users.show);
-router.put("/users/:id", verifyToken, ctrl.users.update);
+// USER routes ADD VERIFYTOKEN
+router.get("/users", ctrl.users.index);
+router.get("/users/:id", ctrl.users.show);
+router.put("/users/:id", ctrl.users.update);
 router.post("/users", verifyToken, ctrl.users.create);
 router.delete("/users/:id", verifyToken, ctrl.users.destroy);
 
 // AUTH routes
-router.post("/register", ctrl.auth.register);
+router.post("/login", ctrl.auth.register);
 router.post("/login", ctrl.auth.login);
 
 

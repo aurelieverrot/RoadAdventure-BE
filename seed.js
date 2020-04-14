@@ -29,7 +29,18 @@ const trips = [
   }
 ]
 
-
+const users = [
+  {
+    username: 'Lili',
+    email: 'lili@lili.com',
+    password: '1234'
+  },
+  {
+    username: 'Aurelie',
+    email: 'aurelie@ga.com',
+    password: '5678'
+  }
+]
 
 
 
@@ -44,8 +55,8 @@ db.Trip.deleteMany({}, (err, result) => {
     console.log(err);
     process.exit();
   }
-
   console.log(`Successfully deleted ${result.deletedCount} trips.`);
+  
 
   // // Delete All Stops
   // console.log('Deleting all stops...');
@@ -54,19 +65,19 @@ db.Trip.deleteMany({}, (err, result) => {
   //     console.log(err);
   //     process.exit();
   //   }
-
   //   console.log(`Successfully deleted ${result.deletedCount} stops.`);
 
-  //   // Delete All Users
-  //   console.log('Deleting all users...');
 
-  //   db.User.deleteMany({}, (err, result) => {
-  //     if (err) {
-  //       console.log(err);
-  //       process.exit();
-  //     };
+    // Delete All Users
+    console.log('Deleting all users...');
 
-  //     console.log(`Successfully deleted ${result.deletedCount} users.`);
+    db.User.deleteMany({}, (err, result) => {
+      if (err) {
+        console.log(err);
+        process.exit();
+      }
+      console.log(`Successfully deleted ${result.deletedCount} users.`);
+
 
       // Create New Trips
       console.log('Creating new trips...');
@@ -74,11 +85,22 @@ db.Trip.deleteMany({}, (err, result) => {
         if (err) {
           console.log(err);
           process.exit();
-        };
-
+        }
         console.log(`Successfully created ${newTrips.length} trips.`);
-        process.exit();
+        
+
+        // Create New Users
+        console.log('Creating new users...');
+        db.User.create(users, (err, newUsers) => {
+          if (err) {
+            console.log(err);
+            process.exit();
+          }
+          console.log(`Successfully created ${newUsers.length} users.`);
+          process.exit();
+        });
       });
-  //   });
+    });
   // });
 });
+
