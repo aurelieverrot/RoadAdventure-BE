@@ -56,7 +56,7 @@ const login = (req, res) => {
     if (err) return res.status(500).json(err);
     if (!foundUser) return res.sendStatus(400);
 
-    if (match) {
+
       const token = jwt.sign(
         {
           username: foundUser.username,
@@ -68,10 +68,10 @@ const login = (req, res) => {
         },
       );
       return res.status(200).json({
-        message: 'User Created',
+        message: 'User Logged in',
         token
       });
-    };
+    
   });
 };
 

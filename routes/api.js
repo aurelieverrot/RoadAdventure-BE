@@ -13,8 +13,8 @@ router.post("/users", verifyToken, ctrl.users.create);
 router.delete("/users/:id", verifyToken, ctrl.users.destroy);
 
 // AUTH routes
-router.post("/login", verifyToken, ctrl.auth.register);
-router.post("/login", verifyToken, ctrl.auth.login);
+router.post("/register", ctrl.auth.register);
+router.post("/login", ctrl.auth.login);
 
 
 // TRIP routes
