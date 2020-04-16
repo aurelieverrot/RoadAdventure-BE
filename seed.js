@@ -4,11 +4,13 @@ const db = require("./models");
 const trips = [
   {
     title: 'Trip 1',
+    user: '5e98bdd2c95377b1861b14d1',
     status: false,
     shortText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
   },
   {
     title: 'Trip 2',
+    
     status: true,
     shortText: "magna aliqua. Sollicitudin tempor id eu nisl. Cras sed felis eget velit aliquet sagittis id. Et sollicitudin ac orci"
   },
@@ -19,6 +21,7 @@ const trips = [
   },
   {
     title: 'Trip 5',
+    user: '5e98bdd2c95377b1861b14d1',
     status: true,
     shortText: "magna eget est lorem. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Turpis"
   },
@@ -69,14 +72,14 @@ db.Trip.deleteMany({}, (err, result) => {
 
 
     // Delete All Users
-    console.log('Deleting all users...');
+    // console.log('Deleting all users...');
 
-    db.User.deleteMany({}, (err, result) => {
-      if (err) {
-        console.log(err);
-        process.exit();
-      }
-      console.log(`Successfully deleted ${result.deletedCount} users.`);
+    // db.User.deleteMany({}, (err, result) => {
+    //   if (err) {
+    //     console.log(err);
+    //     process.exit();
+    //   }
+    //   console.log(`Successfully deleted ${result.deletedCount} users.`);
 
 
       // Create New Trips
@@ -90,17 +93,17 @@ db.Trip.deleteMany({}, (err, result) => {
         
 
         // Create New Users
-        console.log('Creating new users...');
-        db.User.create(users, (err, newUsers) => {
-          if (err) {
-            console.log(err);
-            process.exit();
-          }
-          console.log(`Successfully created ${newUsers.length} users.`);
-          process.exit();
+        // console.log('Creating new users...');
+        // db.User.create(users, (err, newUsers) => {
+        //   if (err) {
+        //     console.log(err);
+        //     process.exit();
+        //   }
+        //   console.log(`Successfully created ${newUsers.length} users.`);
+        //   process.exit();
         });
       });
-    });
+    // });
   // });
-});
+// });
 
