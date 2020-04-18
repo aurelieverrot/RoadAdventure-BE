@@ -1,7 +1,6 @@
 const db = require("../models");
 
 const index = (req, res) => {
-  console.log('salut')
   db.Trip.find({}, (err, foundTrips) => {
     console.log(foundTrips)
     if (err) return res.status(404).json({ status: 404, error: "Cannot find all trips"})

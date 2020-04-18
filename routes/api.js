@@ -26,10 +26,10 @@ router.delete("/trips/:tripId", verifyToken, ctrl.trips.destroy);
 
 // STOP routes
 router.get("/stops", ctrl.stops.index);
-router.get("/stops/:spotId", ctrl.stops.show);
-router.put("/stops/:spotId", verifyToken, ctrl.stops.update); 
+router.get("/stops/:stopId", ctrl.stops.show);
+router.put("/stops/:stopId", verifyToken, ctrl.stops.update); 
 router.post("/stops/", verifyToken, ctrl.stops.create);
-router.delete("/stops/:spotId", verifyToken, ctrl.stops.destroy);
+router.delete("/stops/:stopId", verifyToken, ctrl.stops.destroy);
 
 
 // ----
