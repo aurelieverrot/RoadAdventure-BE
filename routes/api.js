@@ -5,7 +5,7 @@ const ctrl = require("../controllers");
 
 // on api/v1/...
 
-// USER routes ADD VERIFYTOKEN
+// USER routes
 router.get("/users", verifyToken, ctrl.users.index);
 router.get("/users/:id", verifyToken, ctrl.users.show);
 router.put("/users/:id", verifyToken, ctrl.users.update);
@@ -15,7 +15,6 @@ router.delete("/users/:id", verifyToken, ctrl.users.destroy);
 // AUTH routes
 router.post("/register", ctrl.auth.register);
 router.post("/login", ctrl.auth.login);
-
 
 // TRIP routes
 router.get("/trips", ctrl.trips.index);
@@ -30,7 +29,6 @@ router.get("/stops/:stopId", ctrl.stops.show);
 router.put("/stops/:stopId", verifyToken, ctrl.stops.update); 
 router.post("/stops/", verifyToken, ctrl.stops.create);
 router.delete("/stops/:stopId", verifyToken, ctrl.stops.destroy);
-
 
 // ----
 module.exports = router;
