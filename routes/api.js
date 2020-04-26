@@ -9,7 +9,7 @@ const ctrl = require("../controllers");
 router.get("/users", verifyToken, ctrl.users.index);
 router.get("/users/:id", verifyToken, ctrl.users.show);
 router.put("/users/:id", verifyToken, ctrl.users.update);
-router.post("/users", verifyToken, ctrl.users.create);
+// router.post("/users", verifyToken, ctrl.users.create);
 router.delete("/users/:id", verifyToken, ctrl.users.destroy);
 
 // AUTH routes

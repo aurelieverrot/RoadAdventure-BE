@@ -5,7 +5,8 @@ const jwt = require("jsonwebtoken");
 const register = (req, res) => {
   const newUser = {
     username: req.body.username,
-    password: req.body.password
+    password: req.body.password,
+    email: req.body.email,
   };
   
   if (!newUser.username || !newUser.password) return res.status(400).send('username or password cannot be null');
